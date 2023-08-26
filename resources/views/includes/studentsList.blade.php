@@ -49,6 +49,12 @@
                                         <a href="{{ route('modifyStudentForm',['id'=> $student['id']])}}" title="Editer">
                                             <span class="mdi mdi-square-edit-outline"></span>
                                         </a>
+                                        <a href="#" title="Activer">
+                                            <span class="mdi mdi-eye-check-outline"></span>
+                                        </a>
+                                        <a href="#" title="Désactiver">
+                                            <span class="mdi mdi-eye-remove-outline"></span>
+                                        </a>
                                         <a href="{{ route ('newstudentslists',['id'=> $student['id']])}}" title="Supprimer">
                                             <span class="mdi mdi-delete-outline"></span>
                                         </a>

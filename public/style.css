@@ -184,9 +184,8 @@ tbody{
     -webkit-box-orient: vertical;
     overflow: hidden; */
 }
-.body td p{
-    
-display: -webkit-box;
+.body td p{ 
+    display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden; 
@@ -194,8 +193,7 @@ display: -webkit-box;
 }
 .student__photo{
     width: 70px;
-    height: 70px;
-    
+    height: 70px; 
 } 
 
 .student__photo img{
@@ -208,19 +206,26 @@ display: -webkit-box;
 
 .actions a span.mdi-plus-box-outline{
     font-size: 25px;
-    color: rgb(163, 73, 50);
+    color: rgb(185, 125, 13);
 }
 
 .actions a span.mdi-square-edit-outline{
     font-size: 25px;
-    color: rgb(100, 94, 65);
+    color: rgb(80, 68, 6);
 }
 
 .actions a span.mdi-delete-outline{
     font-size: 25px;
     color: rgb(223, 63, 46);
 }
-
+.actions a span.mdi-eye-check-outline{
+    font-size: 25px;
+    color: rgb(47, 108, 4);
+}
+.actions a span.mdi-eye-remove-outline{
+    font-size: 25px;
+    color: rgb(163, 73, 50);
+}
 /*======================>  DETAIL  STUDENTS<==============================*/
 .change__student{
     display: flex;

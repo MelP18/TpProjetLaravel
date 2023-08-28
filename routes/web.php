@@ -18,10 +18,13 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 }); */
 
-
+/* Route de la page Home(pour inscription) */
+Route::get('/', function(){
+   return view('home') ;
+});
 
 /* Route de la page d'accueil(liste des etudiants) */
-Route::get('/', [StudentsController::class, 'showStudentsLists'])->name('studentslists');
+Route::get('/studentsLists', [StudentsController::class, 'showStudentsLists'])->name('studentslists');
 
 
 
@@ -42,13 +45,17 @@ Route::get('/showForm', [StudentsController::class, 'showForm'] )->name("formStu
 Route::post('/add-sutdent-info/addStudent', [StudentsController::class, 'addStudent'] )->name("addStudentInfo");
 
 
-/* Route de la page détails (le formulaire de modification  des informations d'un étudiant) */
+/* Route vers la page de modification  (le formulaire de modification  des informations d'un étudiant) */
 Route::get('/modifyForm/{id}', [StudentsController::class, 'studentInfo'] )->name("modifyStudentForm");
 
-
+/* RRoute de vérification et modification des infos de  l'ajout des étudiants (Modification dans la base de donnée) */
 Route::post('/Form-info/{id}', [StudentsController::class, 'modifyFormInfo'] )->name("modifyFormInfos");
 
 
+Route::get('/statusValueDiseable/{id}', [StudentsController::class, 'diseableStatus'] )->name("diseableStatus");
+
+
+Route::get('/statusValueActivate/{id}', [StudentsController::class, 'activateStatus'] )->name("activateStatus");
 
 /* Route::get('/show', function () {
     return view('student');

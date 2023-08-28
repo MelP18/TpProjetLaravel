@@ -7,12 +7,15 @@ use Illuminate\Support\Facades\Storage;
 
 class StudentsController extends Controller
 {
+
+    /*==============> LISTE DES ETUDIANTS <=================*/
     public function showStudentsLists(){
         $studentsLists = Student::all();
         return view('index', compact('studentsLists'));
     }
 
-    
+
+    /*==============> DETAILS DES INFOS DES ETUDIANTS <=================*/
     public function showStudent($id){
         $students = Student::all();
         $data = Student::find($id);
@@ -20,19 +23,38 @@ class StudentsController extends Controller
     }
 
 
+    /*==============> SUPPRIMER UN ETUDIANT <=================*/
     public function deleteStudent($id){
         $data = Student::where('id', $id)->delete();
         return redirect()-> route('studentslists');
     }
 
 
+    /*==============> MODIFIER LES INFOS D'UN ETUDIANT 
+    (Redirection vers un formulaire avec les infos à modifier) <=================*/
     public function studentInfo($id){
         $students = Student::all();
         $data = Student::find($id);
         return view('edit', compact('data','id'));
     }
 
+    public function diseableStatus($id){
+        Student::where('id', $id)->update([
+             "status"=> false
+         ]);
 
+        return redirect()->route('studentslists')->with('message', 'Status désactivé avec  succès !');
+    }
+
+    public function activateStatus($id){
+        Student::where('id', $id)->update([
+             "status"=> true
+         ]);
+
+        return redirect()->route('studentslists')->with('message', 'Status activé avec  succès !');
+    }
+    
+    /*==============> VALIDATION DE LA MODIFICATION LES INFOS D'UN ETUDIANT <=================*/
     public function modifyFormInfo(Request $request, $id){
 
         $data = $request->all();
@@ -65,11 +87,13 @@ class StudentsController extends Controller
     }
 
 
+    /*==============> VOIR LE FORMULAIRE D'ENREGISTREMENT D'ETUDIANT <=================*/
     public function showForm(){
         return view('show');
     }
 
 
+    /*==============> AJOUTER UN ETUDIANT <=================*/
     public function addStudent(Request $request){
         $data = $request->all();
         $validation = $request->validate([

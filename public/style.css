@@ -26,11 +26,74 @@ a, a.active a:hover{
     margin: 0 auto;
     max-width: 1350px;
 }
+/*======================> HOME <==============================*/
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(20deg, rgba(13,2,57,1) 0%, rgba(157,160,167,1) 100%);
+} 
+.menu{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__logo{
+    width: 150px;
+    height: 150px;
+}
+
+.menu__logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu__content{
+    width: 50%;
+}
+
+.menu__content__list{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.menu__content__list__item{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu__content__list__item a{
+   width: 100%;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding:10px 35px ;
+    background-color: rgb(207, 207, 210); 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 9px;
+    color: rgb(13, 2, 57);
+}
+.menu__content__list__item a:hover{
+    background-color: rgb(167, 169, 174);
+}
 /*======================> HEADER <==============================*/
 header{
     box-shadow: 0px 0px 5px rgb(169, 168, 168);
-    /* background-color: rgb(57, 65, 88); */
-    
+   /*  background-color: rgb(57, 65, 88); 
+     */
 }
 .header__content{
     display: flex;
@@ -104,7 +167,6 @@ main::-webkit-scrollbar-thumb{
 }
 
 .add__student a:hover{
-    background-color: rgb(57, 65, 88);
     background-color: rgb(167, 169, 174);
 }
 .sucess{
@@ -122,6 +184,7 @@ table {
     width: 100%; 
     background-color: rgb(227, 227, 227); 
     border: 1px solid rgb(163, 163, 164);
+    /* background-color: rgb(157, 160, 170); */
 }
 
 thead{
@@ -165,9 +228,9 @@ tbody{
     gap: 2px;  
 }
 
-.body__content:nth-child(even) td{
+/* .body__content:nth-child(even) td{
     background-color: rgb(157, 160, 170);
-}
+} */
 
 .body td{
     width: 100%;
@@ -178,6 +241,7 @@ tbody{
     letter-spacing: 2px;
     gap: 15px;
     background-color:  rgb(220, 220, 220);
+    background-color: rgb(157, 160, 170);
     font-weight: bold;
     /* display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -194,6 +258,7 @@ tbody{
 .student__photo{
     width: 70px;
     height: 70px; 
+    
 } 
 
 .student__photo img{
@@ -202,6 +267,8 @@ tbody{
     object-fit: cover;
     border-radius: 50%;
     background-color: rgb(57, 65, 88);
+    border: 1px solid  rgb(227, 227, 227);
+
 }
 
 .actions a span.mdi-plus-box-outline{

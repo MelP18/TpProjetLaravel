@@ -17,7 +17,7 @@
             
             {{-- MESSAGE D'ERREUR --}}
             @if ($errors->any())
-                <div class="error">
+                <div class="errors">
                     <ul class="errors__list">
                         
                         @foreach ($errors->all() as $error)
@@ -75,7 +75,7 @@
                 <div class="student__information__bottom">
                     <h3>BIOGRAPHIE</h3>
                     <div class="student__biographie">
-                        <textarea value="" name="biography" id="" cols="" rows="5"></textarea>
+                        <input  name="biography" id="" value="{{$data['biography']}}">
                     </div>
                 </div>
                 <button type="submit">SOUMETTRE</button>

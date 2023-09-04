@@ -14,13 +14,30 @@
 
     <div class="block">
         <header>
-            <div class="header__content">
+            <div class="container">
+                <div class="header__content">
                 <div class="header__logo">
                     <a href="/" class="logo__ecole229">
                         <img src="{{ asset('images/logoMiniscule.png') }}" alt="">
                     </a>
                 </div>
+                <div class="menus">
+                    <ul class="menus__list">
+                        <li class="menus__list__item"> 
+                            <a href="{{route('logOut')}}" title="Déconnexion">
+                               <span class="mdi mdi-logout"></span>
+                            </a>
+                        </li>
+                        <span class="line"></span>
+                        <li class="menus__list__item">
+                            <img src="" alt="avatar">
+                        </li>
+                        
+                    </ul>
+                </div>
             </div>
+            </div>
+            
         </header>
         <main>
 

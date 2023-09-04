@@ -11,9 +11,11 @@ class StudentsController extends Controller
 
     /*==============> LISTE DES ETUDIANTS <=================*/
     public function showStudentsLists(){
-        $studentsLists = Student::all();
+       
         
         $user = Auth::user();
+        $studentsLists =  $user->students;
+        //dd($studentsLists);
         $username = user_name($user);
         //$studentsLists = $user->students;
         //$username = $user->surname.' '.$user->firstname;

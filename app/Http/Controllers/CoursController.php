@@ -31,10 +31,14 @@ class CoursController extends Controller
         return redirect()->back()->with('message', 'Cours ajouté avec succès!');
     }
 
-    public function courseList(){
+
+     public function courseList(){
+       /*  $user = Auth::user(); */
         $courses = Cours::all();
         return view('courses',compact('courses'));
     }
+
+
 
     public function courseModify($id){
         //$courses = Cours::all();

@@ -13,10 +13,10 @@
                     <a href="{{ route('category') }}">GESTION DES COURS</a>
                 </li>
                 <li class="management__courses__Cour_Student">
-                    <a href="{{-- {{ route('listCour_Student') }} --}}">GESTION DES ENSEIGNEMENTS</a>
+                    <a href="{{ route('listCour_Student') }}">ATTRIBUTION DES COURS</a>
                 </li>
                 <li class="management__courses__Cour_Student">
-                    <a href="{{ route('listCour_Student') }}">ATTRIBUTION DES COURS</a>
+                    <a href="{{ route('teacherAdd') }} ">GESTION DES ENSEIGNEMENTS</a>
                 </li>
             </ul>
            

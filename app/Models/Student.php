@@ -17,6 +17,16 @@ class Student extends Model
 
     public function courses() {
 
-        return $this->belongsToMany(Cours::class, 'cour_students');
+        return $this->belongsToMany(Cours::class);
+    }
+
+    public function  studentsAllocation()  {
+
+        return $this->hasMany(cour_student::class, 'students_id');  
+    }
+
+    public function coursesStudents() {
+
+        return $this->hasManyThrough(Cours::class, cour_student::class, 'students_id','id','id','courses_id' );
     }
 }

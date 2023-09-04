@@ -19,7 +19,7 @@
                     <thead>
                         <tr class="head__content">
                             <th>ID_AFFECTATION</th>
-                            <th>ETUDIANT</th>
+                            <th>ENSEIGNANT</th>
                             <th>COURS</th>
                             <th>ACTIONS</th>
                         </tr>
@@ -93,7 +93,7 @@
                             </div>
                         @endif
                         <div class="field__list__item">
-                            <label for="etudiant">Etudiant</label>
+                            <label for="etudiant">Enseignant</label>
                             <select name="students_id" id="">
                                 @if (isset($students))
                                     @foreach ($students as $userStudent)

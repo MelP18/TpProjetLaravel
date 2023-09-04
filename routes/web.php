@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CoursController;
+use App\Http\Controllers\TeacherController;
 use App\Models\Cour_Student;
 use App\Models\Cours;
 use Illuminate\Support\Facades\Route;
@@ -116,11 +117,23 @@ Route::controller(CoursController::class)->prefix('courses')->group(function(){
 Route::controller(Cour_StudentController::class)->prefix('attribution')->group(function(){
     
     //Route::post('/send-course', 'addCourseSend')->name('sendCourse');
+    /* Route::get('/add-teacher', 'addTeacher')->name('teacherAdd'); */
+    
+    
     Route::get('/Cour_Student', 'Cour_StudentList')->name('listCour_Student');
     Route::post('/set-Cour_Student', 'Cour_StudentSet')->name('setCour_Student');
     Route::get('/modify-Cour_Student/{id}', 'Cour_StudentModify')->name('modifyCour_Student');
     Route::post('/send-modify-Cour_Student/{id}', 'Cour_StudentModifySend')->name('sendModifyCour_Student');
 });
+
+
+Route::controller(TeacherController::class)->prefix('teacher')->group(function(){
+    Route::get('/add-teacher', 'addTeacher')->name('teacherAdd');
+    Route::post('/send-teacher', 'teacherListSend')->name('sendListTeacher');
+    Route::get('/teacher', 'teacherList')->name('listTeacher');
+    Route::get('/allocation-teacher', 'teacherListAllocation')->name('listTeacherAllocaton');
+});
+
 
 /* Route::get('/show', function () {
     return view('student');

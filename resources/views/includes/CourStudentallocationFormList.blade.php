@@ -30,24 +30,29 @@
                                 
                                     <tr class="body__content">
                                         <td>
-                                            {{-- @foreach ($allocation as $allocate)
-                                                {{ $allocate['id'] }}  
-                                            @endforeach --}}
+                                           
+                                            @foreach ($student->studentsAllocation as $item)
+                                                {{$item->id}}
+                                            @endforeach
                                             
                                         </p> 
                                         </td>
                                         <td>
                                             <p>
                                                
-                                                {{ $student->courses->surname.' '.$student->courses->firstname }}
+                                               {{$student['surname']}}
                                                 
                                             </p>
                                         </td>
                                         <td>
                                            
-                                            @foreach ($courses as $course)
+                                            @foreach ($student->coursesStudents as $item)
+                                                {{$item->name_course}}
+                                            @endforeach
+                                            
+                                            {{-- @foreach ($courses as $course)
                                             <p>{{ $course->name_course}}</p> 
-                                            @endforeach 
+                                            @endforeach  --}}
                                             {{-- <li>{{ $allocation->courses}}</li> --}}
                                             {{-- {{$allocation->courses_id}} --}}
                                             {{-- @foreach ($allocation as $allocate)

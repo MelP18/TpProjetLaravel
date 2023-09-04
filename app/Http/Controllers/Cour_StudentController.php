@@ -13,19 +13,26 @@ class Cour_StudentController extends Controller
 {
     public function Cour_StudentList(){
       
-        $user = Auth::user();
-       
-        $courses = Cours::all();
+        //$user = Auth::user();
+        //$courses = Cours::all();
+        $students = Student::with('studentsAllocation')->get();
+        $cour = $students[0]->name_course;
+        $courses = Cours::with('StudentsCourses')->get();
+        //liste des etudiants
+        //$students = students_name($user);
+        //$studentsAllocation = $students;
+    
+
+        //dd($courses);
+
+        //$courseStudents =Cours::all();
         
-        //$students = Student::all();
-        $students = students_name($user);;
-        $courseStudents =Cours::all();
-       
+        //dd($courses);
         //$allocations = cour_student::all()->groupBy('students_id');
         //dd($allocations);
-        $students = Student::all();
-        $courses = Cours::all();
-        return view('allocation', compact('students','courses','courseStudents'));
+        //$students = Student::all();
+
+        return view('allocationCourStudent', compact('students','courses'/* 'allocations' */));
     }
 
     
@@ -78,4 +85,15 @@ class Cour_StudentController extends Controller
 
         return redirect()->back()->with('message', 'Attribution modifiée avec succès!');
     }
+
+
+    /* public function addTeacher() {
+        return view('teacherForm');
+    }
+
+    public function  teacherList() {
+        return view('teacher');
+    } */
+    
+   
 }

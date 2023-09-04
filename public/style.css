@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-*{
+* {
     position: relative;
     padding: 0;
     margin: 0;
@@ -11,32 +11,47 @@
     font-family: serif;
 }
 
-body{
+body {
     overflow: hidden;
 }
-ul li{
+
+ul li {
     list-style-type: none;
 }
 
-a, a.active a:hover{
+a,
+a.active a:hover {
     text-decoration: none;
 }
-.container{
+
+.connection form,
+.registration form
+
+/* .categories form,
+.courses form */
+    {
+    border: 1px solid rgb(13, 2, 57);
+    box-shadow: 0 0 5px;
+    box-shadow: rgb(97, 96, 97) 0px 20px 30px 10px;
+}
+
+.container {
     padding: 0 15px;
     margin: 0 auto;
     max-width: 1350px;
 }
+
 /*======================> HOME <==============================*/
-.wrapper{
+.wrapper {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(2,0,36);
-    background: linear-gradient(20deg, rgba(13,2,57,1) 0%, rgba(157,160,167,1) 100%);
-} 
-.menu{
+    background-color: rgb(172, 172, 177);
+}
+
+.menu {
     width: 100%;
     display: flex;
     gap: 50px;
@@ -45,131 +60,442 @@ a, a.active a:hover{
     justify-content: center;
 }
 
-.menu__logo{
+.menu__logo {
     width: 150px;
     height: 150px;
 }
 
-.menu__logo img{
+.menu__logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.menu__content{
-    width: 50%;
+.menu__content {
+    width: 55%;
 }
 
-.menu__content__list{
+.menu__content__list {
     display: flex;
     gap: 25px;
     align-items: center;
     justify-content: space-evenly;
 }
-.menu__content__list__item{
+
+.menu__content__list__item {
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.menu__content__list__item a{
-   width: 100%;
-   display: flex;
+
+.menu__content__list__item a {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    padding:10px 35px ;
-    background-color: rgb(207, 207, 210); 
+    padding: 10px 35px;
+    background-color: rgb(207, 207, 210);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 9px;
     color: rgb(13, 2, 57);
 }
-.menu__content__list__item a:hover{
+
+.menu__content__list__item a:hover {
     background-color: rgb(167, 169, 174);
 }
+
+/*======================> REGISTRATION <==============================*/
+.registration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration .fieldform {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: rgb(157, 160, 170);
+}
+
+.registration .fieldform .fieldform__list {
+    padding: 2px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 178px;
+    overflow-y: scroll;
+}
+
+.registration .fieldform .fieldform__list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.registration .fieldform .fieldform__list::-webkit-scrollbar-thumb {
+    background-color: #030736;
+    border-radius: 15px;
+}
+
+.registration .fieldform .fieldform__list .fieldform__list__item__avatar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.registration .fieldform .fieldform__list .fieldform__list__item__avatar label {
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.registration .fieldform .fieldform__list .fieldform__list__item__avatar input {
+    background-color: rgb(227, 227, 227);
+    border: 1px solid rgb(13, 2, 57);
+    border-radius: 5px;
+
+}
+
+.registration .fieldform .fieldform__list .fieldform__list__item__avatar input[type=file]::file-selector-button {
+    border: 0px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(13, 2, 57);
+    border-right: 1px solid rgb(13, 2, 57);
+    /* background-color: rgb(192, 192, 194); */
+    height: 34px;
+    transition: .5s;
+}
+
+.registration-btn {
+    padding: 0 25px;
+    padding-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.registration-btn p {
+    font-weight: bold;
+}
+
+.registration-btn p a {
+    color: rgb(13, 2, 57);
+    font-weight: bold;
+    border-bottom: 1px solid rgb(13, 2, 57);
+}
+
+.registration-btn button {
+    cursor: pointer;
+    padding: 5px 25px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(13, 2, 57);
+    background-color: rgb(13, 2, 57);
+    border-radius: 5px;
+}
+
+/*======================> CONNECTION <==============================*/
+.connection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fieldform {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: rgb(157, 160, 170);
+}
+
+.fieldform h2 {
+    padding: 10px 20px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(13, 2, 57);
+}
+
+.fieldform__list {
+    padding: 0 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.fieldform__list__item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fieldform__list__item label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.fieldform__list__item input {
+    width: 100%;
+    padding: 8px;
+    background-color: rgb(227, 227, 227);
+    border: 1px solid rgb(13, 2, 57);
+    border-radius: 5px;
+    outline: none;
+}
+
+.connection-btn {
+    padding: 0 25px;
+    padding-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forgot__password {
+    display: flex;
+    justify-content: right;
+}
+
+.forgot__password p {
+    font-weight: bold;
+}
+
+.forgot__password p a {
+    color: rgb(13, 2, 57);
+    font-weight: bold;
+    border-bottom: 1px solid rgb(13, 2, 57);
+}
+
+.connection-btn p {
+    font-weight: bold;
+}
+
+.connection-btn p a {
+    color: rgb(13, 2, 57);
+    font-weight: bold;
+    border-bottom: 1px solid rgb(13, 2, 57);
+}
+
+.connection-btn button {
+    cursor: pointer;
+    padding: 5px 25px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(13, 2, 57);
+    background-color: rgb(13, 2, 57);
+    border-radius: 5px;
+}
+
+.forgot-btn {
+    display: flex;
+    justify-content: right;
+    padding: 0 25px;
+    padding-bottom: 25px;
+}
+
+.forgot-btn button {
+    cursor: pointer;
+    padding: 5px 25px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(13, 2, 57);
+    background-color: rgb(13, 2, 57);
+    border-radius: 5px;
+}
+
+/*=================+++> EXPORT <++===========================*/
+/* :root {
+    --blue: #0255f0;
+    --lt-gray: #cccccc;
+    --dk-gray: #767676;
+}
+
+details ul li label input {
+    margin-right: 5px;
+}
+
+details ul li label {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+} */
+
+/* label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    vertical-align: top;
+      
+}
+
+select,
+details {
+    display: inline-block;
+    width: 250px;
+    background-color: white;
+    cursor: pointer;
+} */
+
+/* select,
+summary {
+    border: 1px solid var(--lt-gray);
+    border-collapse: collapse;
+    border-radius: 4px;
+    padding: 4px;
+    width: 250px;
+    background-color: white;
+    cursor: pointer;
+}
+
+details[open]>summary::marker {
+    color: var(--blue);
+} */
+
+/* select:focus,
+summary:focus,
+summary:active {
+    box-shadow: 0 0 5px 1px var(--blue);
+} */
+
+/* details ul {
+    list-style: none;
+    margin: 0px;
+    padding: 5px;
+    margin-top: 2px;
+    border: 1px solid var(--dk-gray);
+    box-shadow: 0 0 5px 1px var(--lt-gray);
+} */
+/* 
+li {
+    margin: 0px;
+    padding: 0px;
+}
+
+li>label {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+}
+
+li>label:hover,
+li>label:has(input:checked) {
+    background-color: var(--dk-gray);
+    color: white;
+} */
+
+
 /*======================> HEADER <==============================*/
-header{
+header {
     box-shadow: 0px 0px 5px rgb(169, 168, 168);
-   /*  background-color: rgb(57, 65, 88); 
+    /*  background-color: rgb(57, 65, 88); 
      */
 }
-.header__content{
+
+.header__content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 5px 0;
 }
-.logo__ecole229{
+
+.logo__ecole229 {
     display: inline-block;
     width: 100%;
     height: 50px;
 }
-.logo__ecole229 img{
+
+.logo__ecole229 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/*======================> MAIN  <==============================*/
-main{
-    height: calc(100vh - (110px));
-    overflow-y: scroll;
-    overflow-x: hidden;   
+.menus__list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-main::-webkit-scrollbar{
+.menus__list span.line {
+    content: "";
+    height: 25px;
+    color: #030736;
+    border: 2px solid;
+}
+
+.menus__list__item a span.mdi-logout {
+    font-size: 25px;
+    color: rgb(13, 2, 57);
+}
+
+/*======================> MAIN  <==============================*/
+main {
+    height: calc(100vh - (110px));
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main::-webkit-scrollbar {
     width: 10px;
 }
 
-main::-webkit-scrollbar-thumb{
+main::-webkit-scrollbar-thumb {
     background-color: #030736;
     background-color: rgb(57, 65, 88);
     border-radius: 15px;
 }
 
-.main__content{
+.main__content {
     display: flex;
     flex-direction: column;
     gap: 25px;
     margin: 35px 0;
 }
 
-.main__title h2{
+.main__title h2 {
     font-size: 20px;
     margin-bottom: 5px;
     color: #030736;
 }
 
-.main__title hr{
+.main__title hr {
     height: 3px;
     background-color: rgb(157, 160, 170);
 }
+
 /*======================> LISTS STUDENTS <==============================*/
-.add__student{
+.management {
     display: flex;
     justify-content: right;
+    gap: 25px;
 }
 
-.add__student a{
+.management li a {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    padding:10px 35px ;
-    background-color: rgb(207, 207, 210); 
+    padding: 10px 35px;
+    background-color: rgb(207, 207, 210);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 9px;
     color: rgb(13, 2, 57);
 }
 
-.add__student a:hover{
+.management li a:hover {
     background-color: rgb(167, 169, 174);
 }
-.sucess{
+
+.sucess {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,34 +503,53 @@ main::-webkit-scrollbar-thumb{
     background-color: rgb(112, 212, 114);
     border-radius: 9px;
 }
-.sucess__message p{
+
+.sucess__message p {
     color: rgb(13, 2, 57);
 }
+
+.errors {
+    text-align: center;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: rgb(220, 109, 109);
+    border-radius: 9px;
+}
+
+.error__message {
+    color: rgb(13, 2, 57);
+}
+
 table {
-    width: 100%; 
-    background-color: rgb(227, 227, 227); 
+    width: 100%;
+    background-color: rgb(227, 227, 227);
     border: 1px solid rgb(163, 163, 164);
     /* background-color: rgb(157, 160, 170); */
 }
 
-thead{
- width: 100%;
-}
-
-tbody{
+thead {
     width: 100%;
 }
 
-.head__content{
+tbody {
+    width: 100%;
+}
+
+.head__content {
     width: 100%;
     display: flex;
-    gap: 2px; 
+    gap: 2px;
 }
 
-.head__content th{
+.head__content th {
     width: 100%;
     padding: 10px 5px;
-    background-color:rgb(54, 62, 118);
+    background-color: rgb(54, 62, 118);
     background-color: rgb(13, 2, 57);
     color: white;
     font-weight: bold;
@@ -215,24 +560,24 @@ tbody{
     white-space: wrap;
 }
 
-.body__content{
+.body__content {
     width: 100%;
     display: flex;
-    gap: 2px;  
+    gap: 2px;
 }
 
-.body{
+.body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2px;  
+    gap: 2px;
 }
 
 /* .body__content:nth-child(even) td{
     background-color: rgb(157, 160, 170);
 } */
 
-.body td{
+.body td {
     width: 100%;
     display: flex;
     align-items: center;
@@ -240,7 +585,7 @@ tbody{
     justify-content: center;
     letter-spacing: 2px;
     gap: 15px;
-    background-color:  rgb(220, 220, 220);
+    background-color: rgb(220, 220, 220);
     background-color: rgb(157, 160, 170);
     font-weight: bold;
     /* display: -webkit-box;
@@ -248,53 +593,58 @@ tbody{
     -webkit-box-orient: vertical;
     overflow: hidden; */
 }
-.body td p{ 
+
+.body td p {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    overflow: hidden; 
+    overflow: hidden;
     text-align: center;
 }
-.student__photo{
-    width: 70px;
-    height: 70px; 
-    
-} 
 
-.student__photo img{
+.student__photo {
+    width: 70px;
+    height: 70px;
+
+}
+
+.student__photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
     background-color: rgb(57, 65, 88);
-    border: 1px solid  rgb(227, 227, 227);
+    border: 1px solid rgb(227, 227, 227);
 
 }
 
-.actions a span.mdi-plus-box-outline{
+.actions a span.mdi-plus-box-outline {
     font-size: 25px;
     color: rgb(185, 125, 13);
 }
 
-.actions a span.mdi-square-edit-outline{
+.actions a span.mdi-square-edit-outline {
     font-size: 25px;
     color: rgb(80, 68, 6);
 }
 
-.actions a span.mdi-delete-outline{
+.actions a span.mdi-delete-outline {
     font-size: 25px;
     color: rgb(223, 63, 46);
 }
-.actions a span.mdi-eye-check-outline{
+
+.actions a span.mdi-eye-check-outline {
     font-size: 25px;
     color: rgb(47, 108, 4);
 }
-.actions a span.mdi-eye-remove-outline{
+
+.actions a span.mdi-eye-remove-outline {
     font-size: 25px;
     color: rgb(163, 73, 50);
 }
+
 /*======================>  DETAIL  STUDENTS<==============================*/
-.change__student{
+.change__student {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -306,62 +656,64 @@ tbody{
     gap: 5px;
 }
 
-.previous__page a{
+.previous__page a {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    padding:5px 25px ;
-    background-color: rgb(207, 207, 210); 
+    padding: 5px 25px;
+    background-color: rgb(207, 207, 210);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 9px;
 }
-.previous__page a span{
-    font-size:20px;
-    color:rgb(13, 2, 57);
+
+.previous__page a span {
+    font-size: 20px;
+    color: rgb(13, 2, 57);
 }
 
-.back__for__ward a{
+.back__for__ward a {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    padding:5px 25px ;
-    background-color: rgb(207, 207, 210); 
+    padding: 5px 25px;
+    background-color: rgb(207, 207, 210);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 9px;
 }
-.back__for__ward a span{
-   font-size: 20px;
-   color:rgb(13, 2, 57);
+
+.back__for__ward a span {
+    font-size: 20px;
+    color: rgb(13, 2, 57);
 }
 
-.change__student a:hover{
+.change__student a:hover {
     background-color: rgb(167, 169, 174);
 }
 
-.profil h4{
+.profil h4 {
     font-size: 18px;
-    color:rgb(13, 2, 57);
+    color: rgb(13, 2, 57);
 }
 
-.main__details__student{
+.main__details__student {
     display: flex;
     flex-direction: column;
     gap: 35px;
 }
 
-.student__information__top{
+.student__information__top {
     display: flex;
     align-items: center;
     gap: 35px;
 }
 
-.photo__student{
+.photo__student {
     width: 250px;
     height: 250px;
     border: 1px solid rgb(13, 2, 57);
@@ -369,7 +721,7 @@ tbody{
     border-radius: 15px;
 }
 
-.photo__student img{
+.photo__student img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -377,109 +729,117 @@ tbody{
     background-color: rgb(57, 65, 88);
 }
 
-.student__information{
+.student__information {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.information{
+.information {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.information h4{
+.information h4 {
     font-size: 16px;
     color: rgb(13, 2, 57);
 }
 
-.label input{
+.label input {
     width: 100%;
-} 
+}
 
-.student__information__bottom{
+.student__information__bottom {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.student__information__bottom h3{ 
+.student__information__bottom h3 {
     font-size: 16px;
     color: rgb(13, 2, 57);
 }
 
-.student__biographie p{
+.student__biographie p {
     text-align: justify;
     line-height: 25px;
 }
 
-.student__biographie textarea{
+.student__biographie input {
     width: 100%;
+    height: 100px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgb(191, 187, 187);
+    border-radius: 5px;
 }
 
 /*============================> ADD STUDENTS <==========================*/
-.page__home{
+.page__home {
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.page__home a{
+.page__home a {
     font-weight: bold;
-    padding:5px 25px ;
-    background-color: rgb(207, 207, 210); 
+    padding: 5px 25px;
+    background-color: rgb(207, 207, 210);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 9px;
 }
 
-.page__home a:hover{
+.page__home a:hover {
     background-color: rgb(167, 169, 174);
 }
 
-.page__home a span{
-    font-size:20px;
-    color:rgb(13, 2, 57);
+.page__home a span {
+    font-size: 20px;
+    color: rgb(13, 2, 57);
 }
-.form__title h4{
+
+.form__title h4 {
     font-size: 18px;
-    color:rgb(13, 2, 57);
+    color: rgb(13, 2, 57);
     text-align: center;
 }
 
-.field input{
+.field input {
     width: 100%;
-    padding: 1.5px 10px; 
-    outline: none; 
+    padding: 1.5px 10px;
+    outline: none;
     border: 1px solid rgb(191, 187, 187);
     border-radius: 5px;
 }
-.photo__student__add{
+
+.photo__student__add {
     border: 1px solid rgb(13, 2, 57);
     border-radius: 15px;
 }
-input[type=file]::file-selector-button {
+
+.photo__student__add input[type=file]::file-selector-button {
     background-color: #eee;
     color: rgb(13, 2, 57);
     border: 0px;
     border-right: 1px solid #e5e5e5;
-    padding: 1.5px 10px; 
+    padding: 1.5px 10px;
     height: 250px;
     margin-right: 20px;
     transition: .5s;
-    border-top-left-radius: 15px ;
-    border-bottom-left-radius: 15px ;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
-  
-input[type=file]::file-selector-button:hover {
-    background-color: rgb(207, 207, 210); 
+
+.photo__student__add input[type=file]::file-selector-button:hover {
+    background-color: rgb(207, 207, 210);
     border: 0px;
     border-right: 1px solid #e5e5e5;
- }
+}
 
-.field input[type="date"]{
+.field input[type="date"] {
     width: 100%;
     border: 1px solid rgb(191, 187, 187);
     background-color: #eee;
@@ -488,41 +848,44 @@ input[type=file]::file-selector-button:hover {
     outline: none;
     border-radius: 5px;
 }
-.field input[type="date"]:hover{
-    background-color: rgb(207, 207, 210); 
+
+.field input[type="date"]:hover {
+    background-color: rgb(207, 207, 210);
 }
-::-webkit-calendar-picker-indicator{
+
+::-webkit-calendar-picker-indicator {
     background-color: #ffffff;
     padding: 2px;
     cursor: pointer;
     border-radius: 3px;
 }
 
-.student__biographie textarea{
+.student__biographie textarea {
     width: 100%;
     padding: 10px;
-    outline: none; 
+    outline: none;
     border: 1px solid rgb(191, 187, 187);
     border-radius: 5px;
 }
 
-.main__details__student button{
+.main__details__student button {
     cursor: pointer;
     padding: 8px 0;
     color: rgb(13, 2, 57);
     border: none;
     font-weight: bold;
-    background-color: rgb(207, 207, 210); 
+    background-color: rgb(207, 207, 210);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 5px;
 }
-.main__details__student button:hover{
+
+.main__details__student button:hover {
     background-color: rgb(167, 169, 174);
 }
 
-.errors__list{
+.errors__list {
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -531,19 +894,198 @@ input[type=file]::file-selector-button:hover {
     border-radius: 9px;
 }
 
-.errors__list__item{
+.errors__list__item {
     color: rgb(13, 2, 57);
 }
+
+/*======================> COURSES <==============================*/
+
+
+.courses__list__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+.courses__list__btn a {
+    font-weight: bold;
+    padding: 10px 35px;
+    color: rgb(13, 2, 57);
+    background-color: rgb(207, 207, 210);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 9px;
+} 
+
+.categories__cours {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
+    height: calc(100vh - 297px);
+}
+.categories__cours__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 25px;
+    gap: 25px;
+    width: 100%;
+    overflow-y: scroll;
+    height: calc(100vh - 345px);
+    background-color: #3d5177;
+    background-color: rgb(57, 65, 88);
+    background-color: rgb(207, 207, 210);
+}
+
+.add__categories__cours {
+    gap: 25px;
+    width: 100%;
+    min-height: calc(100vh - 297px);
+    background-color: #3d5177;
+    background-color: rgb(57, 65, 88);
+    background-color: rgb(207, 207, 210)
+}
+
+.add__categories__cours .title h2 {
+    padding: 10px 20px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(13, 2, 57);
+    background-color: rgb(57, 65, 88);
+}
+.categories{
+    margin-top: 80px;
+}
+
+.categories form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.categories form h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(13, 2, 57);
+}
+
+.categories form .field__list__item input {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    outline: none;
+    color: rgb(13, 2, 57);
+    padding-left: 10px;
+}
+
+.categories form .field__list__item button {
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: bold;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: rgb(57, 65, 88);
+    background-color: #030736;
+    background-color: rgb(57, 65, 88);
+}
+.courses form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.courses form h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(13, 2, 57);
+}
+
+.courses form .field__list,
+.categories form .field__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.courses form .field__list__item,
+.categories form .field__list__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.courses form .field__list__item input,
+select {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    outline: none;
+    color: rgb(13, 2, 57);
+    padding-left: 10px;
+    background-color: white;
+}
+
+.courses form .field__list__item label,
+.categories form .field__list__item label {
+    border: none;
+    padding: 0 7px;
+    letter-spacing: 1px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #030736;
+    background-color: rgb(57, 65, 88);
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    vertical-align: top;
+    line-height: 28px;
+}
+
+.courses_btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.courses .submit__btn {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.courses .submit__btn button {
+    cursor: pointer;
+    border: none;
+    padding: 5px 25px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: rgb(57, 65, 88);
+}
 /*======================> FOOTER <==============================*/
-footer{
+footer {
     box-shadow: 0px 0px 5px rgb(169, 168, 168);
 }
 
-.footer__content{
+.footer__content {
     padding: 15px 0;
 }
 
-.footer__content p{
+.footer__content p {
     font-size: 16px;
     color: rgb(13, 2, 57);
     font-weight: bold;

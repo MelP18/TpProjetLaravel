@@ -5,9 +5,21 @@
                 <h2>LISTE DES ETUDIANTS </h2>
                 <hr>
             </div>
-            <div class="add__student">
-                <a href="{{ route('formStudent') }}">AJOUTER UN ETUDIANT</a>
-            </div>
+            <ul class="management">
+                <li class="management__add__student">
+                    <a href="{{ route('formStudent') }}">AJOUTER UN ETUDIANT</a>
+                </li>
+                <li class="management__add__courses">
+                    <a href="{{ route('category') }}">GESTION DES COURS</a>
+                </li>
+                <li class="management__courses__Cour_Student">
+                    <a href="{{-- {{ route('listCour_Student') }} --}}">GESTION DES ENSEIGNEMENTS</a>
+                </li>
+                <li class="management__courses__Cour_Student">
+                    <a href="{{ route('listCour_Student') }}">ATTRIBUTION DES COURS</a>
+                </li>
+            </ul>
+           
 
             @if(session('message'))
         

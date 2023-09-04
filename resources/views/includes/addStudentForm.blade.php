@@ -16,7 +16,7 @@
         
         {{-- MESSAGE D'ERREUR --}}
         @if ($errors->any())
-            <div class="error">
+            <div class="errors">
                 <ul class="errors__list">
                     
                     @foreach ($errors->all() as $error)
@@ -29,7 +29,7 @@
         <div class="main__details__student">
             <div class="student__information__top">
                 <div class="photo__student__add">
-                    <input value="{{old('photo')}}" type="file" name="photo">
+                    <input type="file" name="photo">
                 </div>
                 <div class="student__information">
                     <div class="information">

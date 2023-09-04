@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class StudentsController extends Controller
@@ -11,7 +12,19 @@ class StudentsController extends Controller
     /*==============> LISTE DES ETUDIANTS <=================*/
     public function showStudentsLists(){
         $studentsLists = Student::all();
-        return view('index', compact('studentsLists'));
+        
+        $user = Auth::user();
+        $username = user_name($user);
+        //$studentsLists = $user->students;
+        //$username = $user->surname.' '.$user->firstname;
+       
+        //dd($username);
+        //$username = $user->lastname;
+        //dd($user->student);
+        //$user = Auth::user();
+        //$studentsLists = Student::where('user_id', $user->id)->get();
+        //$studentsLists = Student::where('user_id', $user->id)->get();
+        return view('index', compact('studentsLists','username'));
     }
 
 
@@ -121,6 +134,7 @@ class StudentsController extends Controller
             "speciality" => $data['speciality'],
             "competency" => $data['competency'],
             "biography" => $data['biography'],
+            "user_id" =>Auth::user()->id
         ]);
 
         return redirect()->route('studentslists')-> with('message', 'Etudiant ajouté avec  succès !');

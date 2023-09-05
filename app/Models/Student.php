@@ -25,8 +25,8 @@ class Student extends Model
         return $this->hasMany(cour_student::class, 'students_id');  
     }
 
-    public function coursesStudents() {
+   /*  public function coursesStudents() {
 
         return $this->hasManyThrough(Cours::class, cour_student::class, 'students_id','id','id','courses_id' );
-    }
+    } */
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cours;
+use App\Models\CourTeacher;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +26,7 @@ class TeacherController extends Controller
     
         return view('teacher',compact('teachers'));
     }
+
 
     public function teacherListSend(Request $request){
         $data = $request->all();
@@ -49,10 +52,20 @@ class TeacherController extends Controller
         return redirect()->route('listTeacher')->with('message', 'Ensiegnant ajouté avec succès!');
     }
 
+
     public function teacherListAllocation() {
-        return view('allocationCourTeacher');
+
+        $user = Auth::user();
+        $teachers = $user->teachers;
+
+        $courses = Cours::all();
+       
+        $affect = CourTeacher::with("teachersLists","coursesLists")->get();
+
+        $allocations = $affect->groupBy('teachers_id');
+
+        return view('allocationCourTeacher', compact('teachers','courses','allocations'));
     }
-   
 
 
 }

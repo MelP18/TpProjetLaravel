@@ -17,17 +17,17 @@ class Cours extends Model
     {
       return  $this->belongsTo(Category::class);
     }
-/* 
+
     public function  students()  {
 
         return $this->belongsToMany(Student::class);  
-    } */
+    } 
 
    
 
-    public function StudentsCourses() {
+    /* public function StudentsCourses() {
 
         return $this->hasManyThrough(Student::class, cour_student::class, 'students_id','id','id','courses_id' );
-    }
+    } */
 
 }

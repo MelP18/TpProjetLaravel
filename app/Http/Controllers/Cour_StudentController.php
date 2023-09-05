@@ -13,26 +13,37 @@ class Cour_StudentController extends Controller
 {
     public function Cour_StudentList(){
       
-        //$user = Auth::user();
+        $user = Auth::user();
         //$courses = Cours::all();
         $students = Student::with('studentsAllocation')->get();
-        $cour = $students[0]->name_course;
-        $courses = Cours::with('StudentsCourses')->get();
+        //$students = $user->students;
+     
+        $courses = Cours::all();
         //liste des etudiants
         //$students = students_name($user);
         //$studentsAllocation = $students;
     
-
+        $affect = cour_student::with("studentsLists" ,"coursesLists")->get();
+        
         //dd($courses);
 
         //$courseStudents =Cours::all();
         
         //dd($courses);
-        //$allocations = cour_student::all()->groupBy('students_id');
+        $allocations = $affect->groupBy('students_id');
+        //dd($allocations);
+       /*  foreach($allocations as $allocation){
+            //dd($allocation);
+          
+            /* foreach($allocation as $allocate){
+                dd($allocate);
+            } *
+        } */
+
         //dd($allocations);
         //$students = Student::all();
 
-        return view('allocationCourStudent', compact('students','courses'/* 'allocations' */));
+        return view('allocationCourStudent', compact('students','courses','allocations'));
     }
 
     
@@ -86,14 +97,4 @@ class Cour_StudentController extends Controller
         return redirect()->back()->with('message', 'Attribution modifiée avec succès!');
     }
 
-
-    /* public function addTeacher() {
-        return view('teacherForm');
-    }
-
-    public function  teacherList() {
-        return view('teacher');
-    } */
-    
-   
 }

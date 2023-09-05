@@ -28,11 +28,17 @@
                                <span class="mdi mdi-logout"></span>
                             </a>
                         </li>
-                        <span class="line"></span>
-                        <li class="menus__list__item">
-                            <img src="" alt="avatar">
+                        <li class="menus__list__item"> 
+                             <span class="line"></span>
                         </li>
-                        
+                        <li class="menus__list__item">
+                            <div class="user__avatar">
+                                <img src="{{asset($userAvatar)}}" alt="avatar">
+                            </div> 
+                            <div class="user__name">
+                                <h2>{{$userFullname}}</h2>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

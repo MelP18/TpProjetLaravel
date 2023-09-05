@@ -212,7 +212,9 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Email/Mot de Passe invalid');
         }
 
-        return redirect()->route('studentslists');
+        $userConnect = Auth::user();
+        $userConnectAvatar = $userConnect['avatar'];
+        return redirect()->route('studentslists','userConnect',);
 
     }
 

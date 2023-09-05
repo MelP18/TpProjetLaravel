@@ -17,16 +17,19 @@ class StudentsController extends Controller
         $studentsLists =  $user->students;
         //dd($studentsLists);
         $username = user_name($user);
+        $userAvatar = $user['avatar'];
+        $userFullname = user_name($user);
+        //dd($userAvatar);
         //$studentsLists = $user->students;
         //$username = $user->surname.' '.$user->firstname;
-       
+        
         //dd($username);
         //$username = $user->lastname;
         //dd($user->student);
         //$user = Auth::user();
         //$studentsLists = Student::where('user_id', $user->id)->get();
         //$studentsLists = Student::where('user_id', $user->id)->get();
-        return view('index', compact('studentsLists','username'));
+        return view('index', compact('studentsLists','username','userAvatar','userFullname'));
     }
 
 

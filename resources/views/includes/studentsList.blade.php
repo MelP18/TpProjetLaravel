@@ -32,6 +32,7 @@
             <div class="main__table">
                 <table>
                     <thead>
+                        <img src="" alt="">
                         <tr class="head__content">
                             <th>PHOTO</th>
                             <th>NOM ET PRÉNOM(S)</th>
